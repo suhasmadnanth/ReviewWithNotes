@@ -16,10 +16,9 @@ class ItemsTableViewCell: UITableViewCell {
     
     func configureCell(itemToBeConfigured: Item){
         itemName.text = itemToBeConfigured.itemName
-        itemPoints.text = "\(100)"
+        itemPoints.text = "\(itemToBeConfigured.itemPoints)"
         itemsImageView.image = UIImage(named: "letter-s")
         
-       
     }
 
 }

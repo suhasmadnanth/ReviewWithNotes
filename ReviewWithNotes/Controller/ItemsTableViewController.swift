@@ -27,7 +27,6 @@ class ItemsTableViewController: UITableViewController {
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
         let predicate = NSPredicate(format: "toParentSection.sectionName MATCHES %@", selectedSection!.sectionName!)
         request.predicate = predicate
-//        let request : NSFetchRequest<Item> = Item.fetchRequest()
         do{
             itemsArray = try context.fetch(request)
         }catch{
@@ -55,6 +54,8 @@ class ItemsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemsTableViewCell
         cell.configureCell(itemToBeConfigured: item)
         cell.itemsImageView.layer.cornerRadius = cell.itemsImageView.frame.height / 2
+        cell.layer.cornerRadius = 50
+        
         return cell
     }
 
@@ -65,8 +66,23 @@ class ItemsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destivationVC = segue.destination as! ReviewViewController
-        
+        let indexPath = tableView.indexPathForSelectedRow
+        let item = itemsArray[indexPath!.row]
+        destivationVC.selectedItem = item
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(itemsArray[indexPath.row])
+            itemsArray.remove(at: indexPath.row)
+            saveItems()
+        }
+    }
+    
     
     @IBAction func addItemsButtonTapped(_ sender: UIBarButtonItem) {
         var textField = UITextField()
@@ -75,6 +91,8 @@ class ItemsTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             let newItem = Item(context: self.context)
             newItem.itemName = textField.text
+            newItem.itemNotes = nil
+            newItem.itemPoints = 0
             newItem.toParentSection = self.selectedSection
             self.itemsArray.append(newItem)
             self.saveItems()
@@ -89,9 +107,5 @@ class ItemsTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
     }
-    
-    
-    
-    
     
 }

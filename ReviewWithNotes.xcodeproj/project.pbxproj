@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13238F8D1245A8E7FFC8BE01 /* Pods_ReviewWithNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F141F68AE307A06C0E264A7A /* Pods_ReviewWithNotes.framework */; };
-		AD233FDD2441F5580070B783 /* recycle.png in Resources */ = {isa = PBXBuildFile; fileRef = AD233FDC2441F5580070B783 /* recycle.png */; };
+		6D8182172444BA9F001A68F5 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8182162444BA9F001A68F5 /* ReviewModel.swift */; };
 		AD233FDF2442165F0070B783 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD233FDE2442165F0070B783 /* ItemsTableViewController.swift */; };
 		AD233FE12442DAE80070B783 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD233FE02442DAE80070B783 /* ItemsTableViewCell.swift */; };
 		AD233FE3244307180070B783 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD233FE2244307180070B783 /* ReviewViewController.swift */; };
@@ -24,8 +24,8 @@
 
 /* Begin PBXFileReference section */
 		1F199C340B515A940E67D31C /* Pods-ReviewWithNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWithNotes.release.xcconfig"; path = "Target Support Files/Pods-ReviewWithNotes/Pods-ReviewWithNotes.release.xcconfig"; sourceTree = "<group>"; };
+		6D8182162444BA9F001A68F5 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		A7E8FBB581712485AC92F8B5 /* Pods-ReviewWithNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWithNotes.debug.xcconfig"; path = "Target Support Files/Pods-ReviewWithNotes/Pods-ReviewWithNotes.debug.xcconfig"; sourceTree = "<group>"; };
-		AD233FDC2441F5580070B783 /* recycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = recycle.png; path = ../../../../Downloads/recycle.png; sourceTree = "<group>"; };
 		AD233FDE2442165F0070B783 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		AD233FE02442DAE80070B783 /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemsTableViewCell.swift; path = ReviewWithNotes/Controller/ItemsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		AD233FE2244307180070B783 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +91,6 @@
 				ADD20E7B2441B050006FA1B5 /* View */,
 				ADD20E7A2441B03B006FA1B5 /* Controller */,
 				ADD20E6D2441AED4006FA1B5 /* Assets.xcassets */,
-				AD233FDC2441F5580070B783 /* recycle.png */,
 				ADD20E6F2441AED4006FA1B5 /* LaunchScreen.storyboard */,
 				ADD20E722441AED4006FA1B5 /* Info.plist */,
 			);
@@ -121,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				ADD20E6A2441AED3006FA1B5 /* ReviewWithNotes.xcdatamodeld */,
+				6D8182162444BA9F001A68F5 /* ReviewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD20E712441AED4006FA1B5 /* LaunchScreen.storyboard in Resources */,
-				AD233FDD2441F5580070B783 /* recycle.png in Resources */,
 				ADD20E6E2441AED4006FA1B5 /* Assets.xcassets in Resources */,
 				ADD20E692441AED3006FA1B5 /* Main.storyboard in Resources */,
 			);
@@ -257,6 +256,7 @@
 				ADD20E6C2441AED3006FA1B5 /* ReviewWithNotes.xcdatamodeld in Sources */,
 				AD233FE3244307180070B783 /* ReviewViewController.swift in Sources */,
 				ADD20E792441B033006FA1B5 /* CategoriesTableViewController.swift in Sources */,
+				6D8182172444BA9F001A68F5 /* ReviewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="itemName" attributeType="String"/>
         <attribute name="itemNotes" optional="YES" attributeType="String"/>
-        <attribute name="itemPoints" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="itemPoints" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="toParentSection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Section" inverseName="toItem" inverseEntity="Section"/>
     </entity>
     <entity name="Section" representedClassName="Section" syncable="YES" codeGenerationType="class">
@@ -11,7 +11,7 @@
         <relationship name="toItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="toParentSection" inverseEntity="Item"/>
     </entity>
     <elements>
-        <element name="Section" positionX="-725.7890625" positionY="-59.796875" width="148.25" height="73"/>
         <element name="Item" positionX="-360.26953125" positionY="-54.2109375" width="128" height="103"/>
+        <element name="Section" positionX="-725.7890625" positionY="-59.796875" width="148.25" height="73"/>
     </elements>
 </model>
