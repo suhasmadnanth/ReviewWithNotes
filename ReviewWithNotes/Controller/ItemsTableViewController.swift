@@ -9,7 +9,10 @@
 import UIKit
 import CoreData
 
+
 class ItemsTableViewController: UITableViewController {
+   
+    
     
     var itemsArray = [Item]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -18,10 +21,14 @@ class ItemsTableViewController: UITableViewController {
             loadItems()
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
@@ -55,7 +62,6 @@ class ItemsTableViewController: UITableViewController {
         cell.configureCell(itemToBeConfigured: item)
         cell.itemsImageView.layer.cornerRadius = cell.itemsImageView.frame.height / 2
         cell.layer.cornerRadius = 50
-        
         return cell
     }
 
@@ -107,5 +113,11 @@ class ItemsTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
         
     }
+    
+    
+    func sendItemDetails(item: Item) {
+        print("Item name is \(String(describing: item.itemName))")
+        print("Item point is \(item.itemPoints)")
+       }
     
 }

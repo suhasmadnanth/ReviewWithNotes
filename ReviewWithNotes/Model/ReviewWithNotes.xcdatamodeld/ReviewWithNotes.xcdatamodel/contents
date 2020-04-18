@@ -5,13 +5,20 @@
         <attribute name="itemNotes" optional="YES" attributeType="String"/>
         <attribute name="itemPoints" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="toParentSection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Section" inverseName="toItem" inverseEntity="Section"/>
+        <relationship name="toReview" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Review" inverseName="toParentItem" inverseEntity="Review"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="reviewNotes" optional="YES" attributeType="String"/>
+        <attribute name="reviewPoints" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="toParentItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="toReview" inverseEntity="Item"/>
     </entity>
     <entity name="Section" representedClassName="Section" syncable="YES" codeGenerationType="class">
         <attribute name="sectionName" attributeType="String"/>
         <relationship name="toItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="toParentSection" inverseEntity="Item"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-360.26953125" positionY="-54.2109375" width="128" height="103"/>
+        <element name="Item" positionX="-455.16796875" positionY="-76.90625" width="128" height="118"/>
         <element name="Section" positionX="-725.7890625" positionY="-59.796875" width="148.25" height="73"/>
+        <element name="Review" positionX="-214.078125" positionY="-50.29296875" width="128" height="88"/>
     </elements>
 </model>

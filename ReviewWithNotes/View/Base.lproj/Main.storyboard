@@ -197,6 +197,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6e-c5-vJS">
+                                <rect key="frame" x="166" y="527" width="83" height="30"/>
+                                <state key="normal" title="Add Review"/>
+                                <connections>
+                                    <action selector="addPointsAndReviews:" destination="fhc-fU-AdD" eventType="touchUpInside" id="YA5-fB-C5R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -207,9 +214,11 @@
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="EEv-Vb-Xuz" secondAttribute="trailing" constant="20" id="E6G-J8-hOo"/>
                             <constraint firstItem="SuG-kG-N1P" firstAttribute="top" secondItem="EEv-Vb-Xuz" secondAttribute="bottom" constant="10" id="ETn-xf-PsD"/>
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="Asw-Ar-ndg" secondAttribute="trailing" constant="20" id="OI7-pI-QbN"/>
+                            <constraint firstItem="b6e-c5-vJS" firstAttribute="top" secondItem="Asw-Ar-ndg" secondAttribute="bottom" constant="50" id="Rbk-u4-1lv"/>
                             <constraint firstItem="CjM-Gl-3wA" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="WXh-Ih-RiN"/>
                             <constraint firstItem="t9S-QC-mJn" firstAttribute="centerX" secondItem="bLV-HB-waw" secondAttribute="centerX" id="ZSZ-7Y-HRg"/>
                             <constraint firstItem="EEv-Vb-Xuz" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="ZeN-1N-xBO"/>
+                            <constraint firstItem="b6e-c5-vJS" firstAttribute="centerX" secondItem="bLV-HB-waw" secondAttribute="centerX" id="eyg-8E-16Z"/>
                             <constraint firstItem="CjM-Gl-3wA" firstAttribute="top" secondItem="zKd-IX-dMY" secondAttribute="bottom" constant="40" id="jQf-gp-sXr"/>
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="SuG-kG-N1P" secondAttribute="trailing" constant="20" id="lMO-o2-ttR"/>
                             <constraint firstItem="zKd-IX-dMY" firstAttribute="top" secondItem="EEv-Vb-Xuz" secondAttribute="bottom" constant="10" id="pve-7m-ZBK"/>
@@ -219,7 +228,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IGo-qm-DA6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1gf-Ws-qfM"/>
+                    <navigationItem key="navigationItem" id="1gf-Ws-qfM">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="fQI-8M-E8j"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addPointsSlider" destination="EEv-Vb-Xuz" id="nLp-g9-hSq"/>
                         <outlet property="addReviewNotes" destination="Asw-Ar-ndg" id="krw-kp-Kiv"/>
