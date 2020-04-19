@@ -12,7 +12,6 @@ import UIKit
 
 class ReviewViewController: UIViewController {
 
-
     var selectedItem : Item?{
         didSet{
             print("Item name is: \(selectedItem!)")
@@ -20,6 +19,9 @@ class ReviewViewController: UIViewController {
         }
     }
     
+    
+    
+    @IBOutlet weak var previousReviewsCollectionView: UICollectionView!
     @IBOutlet weak var addPointsSlider: UISlider!
     @IBOutlet weak var showPointsSliderValue: UILabel!
     @IBOutlet weak var addReviewNotes: UITextView!
@@ -30,7 +32,7 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addReviewNotes.layer.cornerRadius = addReviewNotes.frame.height / 10
-        reviewModel.loadReview()
+        reviewModel.loadReview(item: selectedItem!)
     }
     
     @IBAction func addUISliderAction(_ sender: UISlider) {
@@ -57,3 +59,20 @@ class ReviewViewController: UIViewController {
 }
 
 
+extension ReviewViewController : UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return reviewModel.reviewList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomCollectionViewCell
+        cell.configureCell(reviewItem: reviewModel.reviewList[indexPath.row])
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 201, height: 81)
+    }
+    
+}

@@ -21,6 +21,7 @@ class ReviewModel {
         let newReview = Review(context: context)
         newReview.reviewPoints = item.itemPoints
         newReview.reviewNotes = item.itemNotes
+        newReview.toParentItem = item
         reviewList.append(newReview)
         saveReview()
         print("List of saved reviews are \(reviewList)")
@@ -35,17 +36,15 @@ class ReviewModel {
     }
     
     
-    func loadReview(){
+    func loadReview(item : Item){
         let request : NSFetchRequest<Review> = Review.fetchRequest()
+        let predicate = NSPredicate(format: "toParentItem.itemName MATCHES %@", item.itemName!)
+        request.predicate = predicate
         do{
             reviewList = try context.fetch(request)
         }catch{
             print("Error fetching request \(error)")
         }
-        print("Inside Load Review method. Array list is")
-        for item in reviewList {
-            print("review point is \(item.reviewPoints)")
-            print("review notes is \(item.reviewNotes)")
-        }
+        
     }
 }

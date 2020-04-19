@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13238F8D1245A8E7FFC8BE01 /* Pods_ReviewWithNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F141F68AE307A06C0E264A7A /* Pods_ReviewWithNotes.framework */; };
+		6D68C9A7244C25D500109836 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D68C9A6244C25D500109836 /* CustomCollectionViewCell.swift */; };
 		6D8182172444BA9F001A68F5 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8182162444BA9F001A68F5 /* ReviewModel.swift */; };
 		AD233FDF2442165F0070B783 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD233FDE2442165F0070B783 /* ItemsTableViewController.swift */; };
 		AD233FE12442DAE80070B783 /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD233FE02442DAE80070B783 /* ItemsTableViewCell.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1F199C340B515A940E67D31C /* Pods-ReviewWithNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWithNotes.release.xcconfig"; path = "Target Support Files/Pods-ReviewWithNotes/Pods-ReviewWithNotes.release.xcconfig"; sourceTree = "<group>"; };
+		6D68C9A6244C25D500109836 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D8182162444BA9F001A68F5 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		A7E8FBB581712485AC92F8B5 /* Pods-ReviewWithNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReviewWithNotes.debug.xcconfig"; path = "Target Support Files/Pods-ReviewWithNotes/Pods-ReviewWithNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		AD233FDE2442165F0070B783 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				AD233FDE2442165F0070B783 /* ItemsTableViewController.swift */,
 				AD233FE2244307180070B783 /* ReviewViewController.swift */,
 				AD233FE02442DAE80070B783 /* ItemsTableViewCell.swift */,
+				6D68C9A6244C25D500109836 /* CustomCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD20E662441AED3006FA1B5 /* ViewController.swift in Sources */,
+				6D68C9A7244C25D500109836 /* CustomCollectionViewCell.swift in Sources */,
 				ADD20E622441AED3006FA1B5 /* AppDelegate.swift in Sources */,
 				AD233FDF2442165F0070B783 /* ItemsTableViewController.swift in Sources */,
 				AD233FE12442DAE80070B783 /* ItemsTableViewCell.swift in Sources */,

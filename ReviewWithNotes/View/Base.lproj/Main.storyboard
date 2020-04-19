@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -197,9 +198,71 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W11-CS-id3">
+                                <rect key="frame" x="20" y="611" width="374" height="231"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hyo-Ws-x1C">
+                                        <rect key="frame" x="8" y="61" width="353" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycT-pN-CwH">
+                                            <size key="itemSize" width="209" height="115"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="4jj-6g-0TJ" customClass="CustomCollectionViewCell" customModule="ReviewWithNotes">
+                                                <rect key="frame" x="0.0" y="3" width="209" height="115"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J9x-dG-Kkb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="209" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1F-sj-ejx">
+                                                            <rect key="frame" x="8" y="8" width="193" height="99"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.43170486250000001" green="0.76863807439999998" blue="0.5423753617" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="N1F-sj-ejx" secondAttribute="bottom" constant="8" id="Bk8-MQ-uD9"/>
+                                                        <constraint firstItem="N1F-sj-ejx" firstAttribute="top" secondItem="J9x-dG-Kkb" secondAttribute="top" constant="8" id="KDQ-Id-3nw"/>
+                                                        <constraint firstItem="N1F-sj-ejx" firstAttribute="leading" secondItem="J9x-dG-Kkb" secondAttribute="leading" constant="8" id="Pta-xf-4VH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="N1F-sj-ejx" secondAttribute="trailing" constant="8" id="h8G-O4-uVF"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="209" height="115"/>
+                                                <connections>
+                                                    <outlet property="previousReviewsTextView" destination="N1F-sj-ejx" id="fwS-33-BmI"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="fhc-fU-AdD" id="zQm-CH-WTk"/>
+                                            <outlet property="delegate" destination="fhc-fU-AdD" id="GTA-ii-g3C"/>
+                                        </connections>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b5-TH-Khh">
+                                        <rect key="frame" x="8" y="8" width="358" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86060289119809408" green="0.86060289119809408" blue="0.86060289119809408" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="6b5-TH-Khh" firstAttribute="leading" secondItem="W11-CS-id3" secondAttribute="leading" constant="8" id="Ry0-4R-KuP"/>
+                                    <constraint firstAttribute="trailing" secondItem="6b5-TH-Khh" secondAttribute="trailing" constant="8" id="hHw-5F-FMa"/>
+                                    <constraint firstItem="6b5-TH-Khh" firstAttribute="top" secondItem="W11-CS-id3" secondAttribute="top" constant="8" id="kWq-li-n7Z"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6e-c5-vJS">
-                                <rect key="frame" x="166" y="527" width="83" height="30"/>
-                                <state key="normal" title="Add Review"/>
+                                <rect key="frame" x="137" y="471" width="140" height="30"/>
+                                <state key="normal" title="Add new Review"/>
                                 <connections>
                                     <action selector="addPointsAndReviews:" destination="fhc-fU-AdD" eventType="touchUpInside" id="YA5-fB-C5R"/>
                                 </connections>
@@ -208,17 +271,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tPz-s6-eCs" firstAttribute="top" secondItem="IGo-qm-DA6" secondAttribute="top" constant="20" id="4Ou-cA-hi0"/>
+                            <constraint firstItem="W11-CS-id3" firstAttribute="top" secondItem="b6e-c5-vJS" secondAttribute="bottom" constant="106" id="6Iw-sp-WmF"/>
+                            <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="W11-CS-id3" secondAttribute="trailing" constant="20" id="7JM-zg-SHQ"/>
                             <constraint firstItem="Asw-Ar-ndg" firstAttribute="top" secondItem="CjM-Gl-3wA" secondAttribute="bottom" constant="10" id="ABT-eg-gL7"/>
                             <constraint firstItem="Asw-Ar-ndg" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="C3s-Kk-4yW"/>
                             <constraint firstItem="t9S-QC-mJn" firstAttribute="top" secondItem="EEv-Vb-Xuz" secondAttribute="bottom" constant="10" id="Dqe-sw-fb3"/>
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="EEv-Vb-Xuz" secondAttribute="trailing" constant="20" id="E6G-J8-hOo"/>
                             <constraint firstItem="SuG-kG-N1P" firstAttribute="top" secondItem="EEv-Vb-Xuz" secondAttribute="bottom" constant="10" id="ETn-xf-PsD"/>
+                            <constraint firstItem="b6e-c5-vJS" firstAttribute="top" secondItem="Asw-Ar-ndg" secondAttribute="bottom" constant="20" id="GkN-Fq-o9b"/>
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="Asw-Ar-ndg" secondAttribute="trailing" constant="20" id="OI7-pI-QbN"/>
-                            <constraint firstItem="b6e-c5-vJS" firstAttribute="top" secondItem="Asw-Ar-ndg" secondAttribute="bottom" constant="50" id="Rbk-u4-1lv"/>
+                            <constraint firstItem="W11-CS-id3" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="WDo-s8-PPs"/>
                             <constraint firstItem="CjM-Gl-3wA" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="WXh-Ih-RiN"/>
                             <constraint firstItem="t9S-QC-mJn" firstAttribute="centerX" secondItem="bLV-HB-waw" secondAttribute="centerX" id="ZSZ-7Y-HRg"/>
                             <constraint firstItem="EEv-Vb-Xuz" firstAttribute="leading" secondItem="IGo-qm-DA6" secondAttribute="leading" constant="20" id="ZeN-1N-xBO"/>
                             <constraint firstItem="b6e-c5-vJS" firstAttribute="centerX" secondItem="bLV-HB-waw" secondAttribute="centerX" id="eyg-8E-16Z"/>
+                            <constraint firstItem="IGo-qm-DA6" firstAttribute="bottom" secondItem="W11-CS-id3" secondAttribute="bottom" constant="20" id="gxd-zz-Muy"/>
                             <constraint firstItem="CjM-Gl-3wA" firstAttribute="top" secondItem="zKd-IX-dMY" secondAttribute="bottom" constant="40" id="jQf-gp-sXr"/>
                             <constraint firstItem="IGo-qm-DA6" firstAttribute="trailing" secondItem="SuG-kG-N1P" secondAttribute="trailing" constant="20" id="lMO-o2-ttR"/>
                             <constraint firstItem="zKd-IX-dMY" firstAttribute="top" secondItem="EEv-Vb-Xuz" secondAttribute="bottom" constant="10" id="pve-7m-ZBK"/>
@@ -234,6 +301,7 @@
                     <connections>
                         <outlet property="addPointsSlider" destination="EEv-Vb-Xuz" id="nLp-g9-hSq"/>
                         <outlet property="addReviewNotes" destination="Asw-Ar-ndg" id="krw-kp-Kiv"/>
+                        <outlet property="previousReviewsCollectionView" destination="hyo-Ws-x1C" id="BwP-iM-X4T"/>
                         <outlet property="showPointsSliderValue" destination="t9S-QC-mJn" id="sse-rr-gC1"/>
                     </connections>
                 </viewController>
