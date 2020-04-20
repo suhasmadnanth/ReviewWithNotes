@@ -19,5 +19,7 @@ class ItemsTableViewCell: UITableViewCell {
         itemPoints.text = "\(itemToBeConfigured.itemPoints)"
         itemsImageView.image = UIImage(named: "letter-s")
     }
+    
+    
 
 }

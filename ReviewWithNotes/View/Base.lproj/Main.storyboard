@@ -219,15 +219,14 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="209" height="115"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1F-sj-ejx">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N1F-sj-ejx">
                                                             <rect key="frame" x="8" y="8" width="193" height="99"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.43170486250000001" green="0.76863807439999998" blue="0.5423753617" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="N1F-sj-ejx" secondAttribute="bottom" constant="8" id="Bk8-MQ-uD9"/>
                                                         <constraint firstItem="N1F-sj-ejx" firstAttribute="top" secondItem="J9x-dG-Kkb" secondAttribute="top" constant="8" id="KDQ-Id-3nw"/>
@@ -301,6 +300,8 @@
                     <connections>
                         <outlet property="addPointsSlider" destination="EEv-Vb-Xuz" id="nLp-g9-hSq"/>
                         <outlet property="addReviewNotes" destination="Asw-Ar-ndg" id="krw-kp-Kiv"/>
+                        <outlet property="previousReviewLabel" destination="6b5-TH-Khh" id="Pdz-oA-wwE"/>
+                        <outlet property="previousReviewView" destination="W11-CS-id3" id="q02-he-Vhn"/>
                         <outlet property="previousReviewsCollectionView" destination="hyo-Ws-x1C" id="BwP-iM-X4T"/>
                         <outlet property="showPointsSliderValue" destination="t9S-QC-mJn" id="sse-rr-gC1"/>
                     </connections>

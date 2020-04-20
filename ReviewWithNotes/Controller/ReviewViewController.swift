@@ -28,11 +28,18 @@ class ReviewViewController: UIViewController {
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var itemPointsAndReviewToAdd = [ReviewModel]()
     var reviewModel = ReviewModel()
+    @IBOutlet weak var previousReviewLabel: UILabel!
+    @IBOutlet weak var previousReviewView: UIView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addReviewNotes.layer.cornerRadius = addReviewNotes.frame.height / 10
         reviewModel.loadReview(item: selectedItem!)
+        previousReviewView.layer.cornerRadius = previousReviewView.frame.height / 10
+        previousReviewLabel.text = "\(String(describing: selectedItem?.itemName)) previous review:"
+        
     }
     
     @IBAction func addUISliderAction(_ sender: UISlider) {
@@ -42,7 +49,7 @@ class ReviewViewController: UIViewController {
     
     @IBAction func addPointsAndReviews(_ sender: UIButton) {
         if addPointsSlider.value > 0.0 {
-            selectedItem?.itemPoints = Int64(addPointsSlider.value)
+            selectedItem?.itemPoints += Int64(addPointsSlider.value)
         }
         if addReviewNotes.text != "" {
                 selectedItem?.itemNotes = addReviewNotes.text

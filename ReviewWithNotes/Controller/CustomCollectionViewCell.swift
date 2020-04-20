@@ -16,7 +16,9 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     
     func configureCell(reviewItem : Review){
+        previousReviewsTextView.layer.cornerRadius = previousReviewsTextView.frame.height / 7
         previousReviewsTextView.text = reviewItem.reviewNotes
+        
        
     }
 }
